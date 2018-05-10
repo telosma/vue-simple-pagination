@@ -6,12 +6,22 @@
     <div class="demo-component">
       <pagination
         :current-page="currentPage"
-        :total-count="22"
-        :per-page="2"
+        :total-count="totalCount"
+        :per-page="perPage"
+        :type="type"
         v-model="currentPage"
         @change="handleChangePagination($event)"
       >
       </pagination>
+    </div>
+    <div class="ui two column centered grid">
+      <div class="column">
+        <a class="ui teal tag label">Type</a>
+        <select class="ui dropdown" v-model="type">
+          <option value="df">Default</option>
+          <option value="simple">Simple</option>
+        </select>
+      </div>
     </div>
   </div>
 </template>
@@ -29,6 +39,9 @@ export default {
     return {
       msg: 'Welcome to Telosma Pagination App',
       currentPage: 1,
+      perPage: 2,
+      totalCount: 22,
+      type: "simple"
     }
   },
 
@@ -50,6 +63,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.demo-component {
+  padding: 2rem;
 }
 
 h1, h2 {

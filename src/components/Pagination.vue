@@ -201,8 +201,6 @@ export default {
 .pagination-container {
   margin-bottom: 2rem;
   .p-simple {
-    position: absolute;
-    top: -50%;
     .arrow-container {
       .arrow-left {
         &.clickable {
