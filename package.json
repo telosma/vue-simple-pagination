@@ -5,7 +5,7 @@
   "author": "duylx",
   "license": "MIT",
   "private": true,
-  "homepage": "https://telosma.github.io/vue-simple-pagination/",
+  "homepage": "https://github.com/telosma/fc-barcelona-players",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
