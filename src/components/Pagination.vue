@@ -1,7 +1,13 @@
 <script>
-import range from 'lodash/range'
-import chunk from 'lodash/chunk'
 import { PAGINATION } from '../constants'
+
+const chunk = (input, size) => {
+  return input.reduce((arr, item, idx) => {
+    return idx % size === 0
+      ? [...arr, [item]]
+      : [...arr.slice(0, -1), [...arr.slice(-1)[0], item]]
+  }, [])
+}
 
 export default {
   props: {
@@ -75,7 +81,7 @@ export default {
      // @return Array number of page value
     pages () {
       let pageLists = []
-      const arrayRangePage = range(1, this.totalPage + 1)
+      const arrayRangePage = [...Array(this.totalPage).keys()].map(v => v+1)
       if (this.totalPage <= this.limit || this.limit === 0) {
         pageLists = arrayRangePage
       } else {
